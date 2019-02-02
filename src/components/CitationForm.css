@@ -1,0 +1,6 @@
+.ProductForm input
+.ProductForm textarea
+.ProductForm select {
+    display: block;
+    margin-bottom: 10px;
+}
