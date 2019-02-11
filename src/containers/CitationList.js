@@ -14,6 +14,7 @@ import {
 import { NavLink as RouterLink} from "react-router-dom";
 import axios from "../axios-citation";
 import {CATEGORIES} from "../constants";
+import reqResHandler from "../hoc/reqResHandler";
 
 class CitationList extends Component {
   state = {
@@ -53,7 +54,6 @@ class CitationList extends Component {
     console.log(citation);
     axios.delete('/citations/' + citation.id + '.json').then(() => {
       this.setState({loading: false});
-      // this.props.history.replace('/');
       window.location.reload();
     })
   };
@@ -103,4 +103,4 @@ class CitationList extends Component {
   }
 }
 
-export default CitationList;
+export default reqResHandler(CitationList, axios);
